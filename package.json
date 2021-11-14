@@ -1,0 +1,32 @@
+{
+  "name": "resturant-page",
+  "version": "1.0.0",
+  "description": "It's a webpage for a resturant",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch",
+    "start": "webpack serve --open",
+    "server": "node server.js",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UrinTrolden/resturant-page.git"
+  },
+  "devDependencies": {
+    "css-loader": "^6.5.1",
+    "html-webpack-plugin": "^5.5.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.64.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-middleware": "^5.2.1",
+    "webpack-dev-server": "^4.5.0"
+  },
+  "author": "urintrolden",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/UrinTrolden/resturant-page/issues"
+  },
+  "homepage": "https://github.com/UrinTrolden/resturant-page#readme"
+}
