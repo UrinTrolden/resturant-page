@@ -1,20 +1,49 @@
+import './styles.css';
+import { home } from './tabs/home';
+import { menu } from './tabs/menu';
 import durumsBlade from './pics/durumsblade.png'
+export {component, createContainer}
 
-console.log("hello there");
-
-function component() {
-    const element = document.createElement('div');
-
-    element.innerHTML = "Welcome to the shop!";
-    element.classList.add('title');
-
-    // Add the image to our existing div.
-    const durumsBladePic = new Image();
-    durumsBladePic.src = durumsBlade;
-
-    element.appendChild(durumsBladePic);
-
+function component(name, type) {
+    const element = document.createElement(type);
+    element.classList.add(name);
     return element;
- }
+}
 
- document.body.appendChild(component());
+const createContent = (() => {
+    const contents = component("contents", "div");
+    document.body.appendChild(contents);
+    return {contents};
+})();
+
+const createButtons = (() => {
+    const tabs = component("tabs", "div");
+    const homeButton = component("tabbutton", "button");
+    const menuButton = component("tabbutton", "button");
+    const aboutButton = component("tabbutton", "button");
+    homeButton.innerText = "home";
+    menuButton.innerText = "menu";
+    aboutButton.innerText = "about";
+    tabs.appendChild(homeButton);
+    tabs.appendChild(menuButton);
+    tabs.appendChild(aboutButton);
+    createContent.contents.appendChild(tabs);
+    return {homeButton, menuButton, aboutButton};
+})();
+
+const createContainer = (() => {
+    const container = component("container", "div");
+    createContent.contents.appendChild(container);
+    return {container};
+})();
+
+
+
+const tabSelector = (() => {
+    createButtons.menuButton.onclick = () => {
+        menu();
+    };
+    createButtons.homeButton.onclick = () => {
+        home();
+    };
+})();

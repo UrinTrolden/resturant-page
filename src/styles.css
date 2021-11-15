@@ -1,0 +1,23 @@
+.contents {
+    display: grid;
+    border: medium dashed green;
+    justify-content: center;
+    margin-left: 25%;
+    margin-right: 25%;
+    min-width: 500px;
+    height: auto;
+}
+
+.container {
+    width: 100%;
+    display: grid;
+    grid-auto-columns: auto;
+    margin: 0;
+}
+
+.tabs {
+    display: grid;
+    grid-auto-flow: column;
+    width: 100%;
+    margin: 0;
+}
