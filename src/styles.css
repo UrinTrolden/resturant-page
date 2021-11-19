@@ -1,11 +1,21 @@
+@font-face {
+    font-family: 'gamixregular';
+    src: url('./fonts/gamix-webfont.woff2') format('woff2'),
+         url('./fonts/gamix-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 .contents {
     display: grid;
     border: medium dashed green;
-    justify-content: center;
-    margin-left: 25%;
-    margin-right: 25%;
-    min-width: 500px;
+    position: absolute;
     height: auto;
+    min-width: 500px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    background-color: lightgray;
 }
 
 .container {
@@ -13,6 +23,13 @@
     display: grid;
     grid-auto-columns: auto;
     margin: 0;
+    text-align: center;
+}
+
+.title {
+    margin: 1em;
+    font-family: 'gamixregular';
+    font-size: 2em;
 }
 
 .tabs {
@@ -20,4 +37,24 @@
     grid-auto-flow: column;
     width: 100%;
     margin: 0;
+}
+
+.tabbutton {
+    font-family: 'gamixregular';
+    color:olivedrab;
+    font-size: 3em;
+    background-color: lightgray;
+}
+
+.forret {
+    margin: 50px;
+}
+
+.quotebox {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    font-style: oblique;
 }

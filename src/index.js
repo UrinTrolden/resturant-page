@@ -1,8 +1,13 @@
 import './styles.css';
 import { home } from './tabs/home';
 import { menu } from './tabs/menu';
-import durumsBlade from './pics/durumsblade.png'
-export {component, createContainer}
+export {component, createContainer, createTitle}
+
+const createTitle = (innerText) => {
+    const title = component("title", "div");
+    title.innerText = innerText;
+    createContainer.container.appendChild(title);
+};
 
 function component(name, type) {
     const element = document.createElement(type);
@@ -36,8 +41,6 @@ const createContainer = (() => {
     createContent.contents.appendChild(container);
     return {container};
 })();
-
-
 
 const tabSelector = (() => {
     createButtons.menuButton.onclick = () => {
