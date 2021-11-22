@@ -1,4 +1,5 @@
 import './styles.css';
+import { about } from './tabs/about';
 import { home } from './tabs/home';
 import { menu } from './tabs/menu';
 export {component, createContainer, createTitle}
@@ -42,6 +43,8 @@ const createContainer = (() => {
     return {container};
 })();
 
+
+
 const tabSelector = (() => {
     createButtons.menuButton.onclick = () => {
         menu();
@@ -49,4 +52,16 @@ const tabSelector = (() => {
     createButtons.homeButton.onclick = () => {
         home();
     };
+    createButtons.aboutButton.onclick = () => {
+        about();
+    };
+})();
+
+const createFooter = (() => {
+    const footer = component("footer", "footer");
+    document.body.appendChild(footer);
+    const footerText = component("footerText", "p");
+    footerText.innerText = "Made by UrinTrolden";
+    document.body.appendChild(footer);
+    footer.appendChild(footerText);
 })();
