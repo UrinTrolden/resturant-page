@@ -2,13 +2,13 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   entry: {
     index: './src/index.js',
   },
   devtool: 'inline-source-map',
   devServer: {
-    static: './dist',
+    static: '/dist',
   },
   watchOptions: {
     poll: true,
@@ -22,8 +22,8 @@ module.exports = {
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
+    publicPath: argv.mode === 'production' ? '/my-static-website' : '/',
     clean: true,
-    publicPath: '/',
     hashFunction: "xxhash64"
   },
   module: {
