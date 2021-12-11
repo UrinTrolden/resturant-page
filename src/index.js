@@ -12,7 +12,7 @@ const createTitle = (innerText) => {
 
 function component(name, type) {
     const element = document.createElement(type);
-    element.classList.add(name);
+    if (name != "") element.classList.add(name);
     return element;
 }
 
@@ -46,6 +46,7 @@ const createContainer = (() => {
 
 
 const tabSelector = (() => {
+    home();
     createButtons.menuButton.onclick = () => {
         menu();
     };

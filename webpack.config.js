@@ -2,7 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  mode: 'production',
+  mode: 'development',
   entry: {
     index: './src/index.js',
   },
@@ -20,9 +20,9 @@ module.exports = {
     }),
   ],
   output: {
+    publicPath: '/resturant-page/',
+    path: path.join(process.cwd(), 'dist'),
     filename: 'main.js',
-    path: path.resolve(__dirname, 'dist'),
-    publicPath: argv.mode === 'production' ? '/my-static-website' : '/',
     clean: true,
     hashFunction: "xxhash64"
   },
@@ -42,4 +42,33 @@ module.exports = {
       },
      ],
    },
+   performance: {
+    hints: false
+  },
 };
+
+/*
+    production
+
+  output: {
+    publicPath: '/resturant-page/',
+    path: path.join(process.cwd(), 'dist'),
+    filename: 'main.js',
+    clean: true,
+    hashFunction: "xxhash64"
+  },
+
+*/
+
+/*
+    development
+    
+  output: {
+    filename: 'main.js',
+    path: path.resolve(__dirname, 'dist'),
+    clean: true,
+    publicPath: '/',
+    hashFunction: "xxhash64"
+  },
+
+*/

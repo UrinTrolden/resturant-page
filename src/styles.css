@@ -7,12 +7,16 @@
 
 }
 
+body {
+    background-color: darkslategrey;
+}
+
 .contents {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: medium dashed green;
+    border: medium solid black;
     height: auto;
     min-width: 500px;
     max-width: 700px;
@@ -28,7 +32,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 0;
+    margin: 0 auto;
     text-align: center;
     
 }
@@ -48,7 +52,7 @@
 
 .tabbutton {
     font-family: 'gamixregular';
-    color:olivedrab;
+    color:black;
     font-size: 3em;
     background-color: lightgray;
 }
@@ -78,4 +82,66 @@
     width:400px;
     height:200px;
     object-fit: cover;
+}
+
+.menu {
+    font-family:'Times New Roman', Times, serif;
+    font-size: 14px;
+}
+
+.menu-group-heading {
+    font-family:'gamixregular';
+    margin: 1em;
+    padding-bottom: 1em;
+    border-bottom: 2px solid darkgray;
+}
+
+.menu-group {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5em;
+    padding: 1.5em 0;
+}
+
+.menu-item-image {
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+    object-fit: cover;
+    margin-right: 1.5em;
+}
+
+.menu-item-text {
+    flex-grow: 1;
+}
+
+.menu-item-heading {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+}
+
+.menu-item-name {
+    margin-right: 1.5em;
+}
+
+.menu-item-description {
+    line-height: 1.6;
+}
+
+@media screen and (min-width: 992px) {
+    .menu {
+        font-size: 16px;
+    }
+
+    .menu-group {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .menu-item-image {
+        width: 125px;
+        height: 125px;
+        flex-shrink: 0;
+        object-fit: cover;
+        margin-right: 1.5em;
+    }
 }
