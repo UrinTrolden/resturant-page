@@ -12,7 +12,7 @@ module.exports = {
   },
   watchOptions: {
     poll: true,
-    ignored: '/node_modules/'
+    ignored: '/node_modules/',
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -26,6 +26,7 @@ module.exports = {
     clean: true,
     hashFunction: "xxhash64"
   },
+
   module: {
      rules: [
        {
